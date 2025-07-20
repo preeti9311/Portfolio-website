@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300;1,18..144,300&family=TikTok+Sans:opsz,wdth,wght@12..36,104.4,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,700;1,18..144,700&family=TikTok+Sans:opsz,wdth,wght@12..36,104.4,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+ 
+  <div class="container">
+    <header>
+      <nav>
+        <div class="left">
+          <i class="fas fa-laptop-code"></i>
+          <h1>Preeti Kumari</h1>
+        </div>
+        <div class="right">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+ 
+
+  <!-- main  helper section-->
+
+  <div class="hero-section" id="home">
+     <div class="hero-left-section">
+   <h1>
+    Hi, I'm <br>
+   <span class="typing-name">Preeti Kumari</span>
+   </h1>
+
+      <p>I am a passionate web developer with a knack for creating stunning websites.</p>
+       
+
+     <div class="social_resume">
+       <div class="social-icons">
+         <a href="https://github.com/preeti9311" target="_blank"><i class="fab fa-github"></i></a>
+         <a href="https://www.linkedin.com/in/preeti-kumari-7707722a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+         <a href="https://wa.me/9311210611" target="_blank"><i class="fab fa-whatsapp"></i></a>
+         <a href="https://www.instagram.com/preet_i2357" target="_blank"><i class="fab fa-instagram"></i></a>
+       </div>
+      <div class="hero-button">
+      <a href="my_resume_nsut_2.pdf" download>
+      <button class="btn-resume">Download Resume</button>
+      </a>
+      </div>
+
+     </div>
+ </div>
+
+   
+     <div class="hero-right-section">
+       <img src="my_photo.png" class="hero-image" alt="Preeti">
+
+     </div>
+  
+   
+  </div>
+
+
+   <!-- Aboutsection -->
+<div class="about-section" id="about">
+</div>
+
+
+<!-- skills -->
+<div class="skills-section" id="skills">
+</div>
+
+
+<!-- projects -->
+<div class="projects-section" id="projects">
+</div>
+
+
+
+<!-- contact -->
+<div class="contact-section" id="contact">
+</div>
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+
+  </script>
+  </body>
+</html>
