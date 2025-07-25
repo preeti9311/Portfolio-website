@@ -1,12 +1,12 @@
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-
 body {
   background-color: rgb(0, 0, 33);
   font-family: 'Merriweather', sans-serif;
@@ -26,14 +26,12 @@ nav {
   position: relative;
   z-index: 10;
 }
-
 .left {
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .left i {
   border: 2px solid #00d8ff;
   border-radius: 50%;
@@ -43,35 +41,29 @@ nav {
   padding: 8px;
   transition: transform 0.3s ease;
 }
-
 .left i:hover {
   transform: rotate(20deg) scale(1.1);
 }
-
 .left h1 {
   color: #00d8ff;
   font-size: 1.8rem;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
 }
-
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
-
 .nav-links li a:hover {
   color: #00d8ff;
   font-size: 1.3rem;
   transform: translateY(-3px);
 }
-
 .menu-icon {
   display: none;
   color: white;
@@ -79,7 +71,6 @@ nav {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .menu-icon:hover {
   transform: scale(1.2);
 }
@@ -102,20 +93,16 @@ nav {
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
     z-index: 20;
   }
-
   .nav-links.show {
     width: 200px;
     padding: 20px;
   }
-
   .menu-icon {
     display: block;
   }
-
   .nav-links li a {
     font-size: 1.2rem;
   }
-
   .nav-links li a:hover {
     transform: translateX(-5px);
   }
@@ -130,23 +117,23 @@ nav {
   gap: 30px;
   flex-wrap: wrap;
 }
-
 .hero-left-section {
   flex: 1;
   margin-left: 10px;
+  animation: fadeInLeft 1s ease forwards;
 }
-
 .hero-right-section {
   flex: 1;
   display: flex;
   justify-content: center;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
-
 .hero-left-section h1 {
   font-size: 3.5rem;
   white-space: nowrap;
 }
-
 .typing-name {
   display: inline-block;
   overflow: hidden;
@@ -156,12 +143,13 @@ nav {
   color: #00d8ff;
   animation: typewriter 2s steps(12, end) 1s forwards, blink 0.7s infinite;
 }
-
 .hero-left-section p {
   font-size: 1.2rem;
   margin-top: 10px;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
-
 @keyframes typewriter {
   from {
     width: 0ch;
@@ -170,7 +158,6 @@ nav {
     width: 10.5ch;
   }
 }
-
 @keyframes blink {
   0%, 50%, 100% {
     border-color: #00d8ff;
@@ -179,7 +166,6 @@ nav {
     border-color: transparent;
   }
 }
-
 .hero-image {
   margin: 50px;
   height: 350px;
@@ -187,6 +173,11 @@ nav {
   border: 5px solid #00d8ff;
   border-radius: 50%;
   box-shadow: 5px 10px 20px black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-image:hover {
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Hero Responsive */
@@ -195,20 +186,22 @@ nav {
     flex-direction: column;
     text-align: center;
   }
-
   .hero-left-section {
     margin: 0;
   }
-
   .hero-left-section h1 {
     font-size: 2.5rem;
   }
-
   .hero-image {
     height: 250px;
     width: 250px;
     margin: 20px 0;
   }
+  .hero-image img:hover{
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
 }
 
 /* Social Icons & Resume Button */
@@ -218,7 +211,6 @@ nav {
   justify-content: start;
   gap: 5px;
 }
-
 .social-icons a {
   color: #00d8ff;
   border: 2px solid #00d8ff;
@@ -228,18 +220,15 @@ nav {
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 216, 255, 0.4);
 }
-
 .social-icons a i {
   font-size: 1.5rem;
 }
-
 .social-icons a:hover {
   background: #00d8ff;
   color: black;
   transform: scale(1.2);
   box-shadow: 0 4px 12px rgba(0, 216, 255, 0.6);
 }
-
 .btn-resume {
   background-color: #00d8ff;
   color: white;
@@ -250,14 +239,12 @@ nav {
   box-shadow: 0 2px 8px rgba(0, 216, 255, 0.4);
   transition: all 0.3s ease;
 }
-
 .btn-resume:hover {
   background-color: rgb(2, 19, 54);
   color: white;
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 216, 255, 0.6);
 }
-
 .social_resume {
   display: flex;
   justify-content: flex-start;
@@ -266,10 +253,133 @@ nav {
   margin-left: 10px;
   align-items: center;
 }
-
 @media (max-width: 900px) {
   .social_resume {
     justify-content: center;
     flex-wrap: wrap;
   }
 }
+.highlight {
+  color: #00d8ff;
+}
+
+
+    .about-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px;
+      padding: 60px 40px;
+      gap: 40px;
+      background-color: rgb(0, 0, 33);
+    }
+
+    .about-left-section {
+      flex: 1;
+      width: 50%;
+      animation: fadeInLeft 1s ease forwards;
+    }
+
+    .about-left-section img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-left-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .about-right-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 50%;
+      animation: fadeInRight 1s ease forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .about-section h1,
+    .about-section h3,
+    .about-section p {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .about-section h1 {
+      font-size: 4rem;
+      animation-delay: 0.5s;
+    }
+
+    .about-section h3 {
+      color: #00f7ff;
+      animation-delay: 0.7s;
+    }
+
+    .about-section p {
+      animation-delay: 0.9s;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #00f7ff;
+      font-weight: bold;
+    }
+
+    /* ====== ANIMATIONS ====== */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ====== RESPONSIVE DESIGN ====== */
+    @media (max-width: 900px) {
+      .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .about-left-section,
+      .about-right-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-right-section {
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+    }
